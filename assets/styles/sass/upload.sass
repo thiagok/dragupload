@@ -30,18 +30,29 @@ body
           margin-bottom: 5px
           div
             font-size: 13px
-            padding: 5px
             border-radius: 20px
-            color: white
 
           .progress
-            background-color: #26A2ED
             // text-shadow: 1px 1px 1px #000
+            position: relative
+            background-color: white
+            border: 1px solid #ddd
+            .bg
+              background-color: #26A2ED
+              height: 26px
+              width: 0
+              -webkit-transition: width 0.5s
+              transition: width 0.5s
+
+            span
+              position: absolute
+              top: 0
+              line-height: 25px
+              padding-left: 10px
+              color: white
 
     .title
       font-weight: bold
-
-
 
 .hidden
   display: none
