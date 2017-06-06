@@ -14,9 +14,8 @@ var SoftUpload = {
     upload.ondrop     = function (e) {
       e.preventDefault();
       this.className = '';
-      SoftUpload.step1.className = "hidden";
-      SoftUpload.step2.className = "";
-
+      SoftUpload.step1.className += " hidden";
+      SoftUpload.step2.classList.remove("hidden");
       SoftUpload.read(e.dataTransfer.files);
     }
   },
@@ -36,13 +35,18 @@ var SoftUpload = {
     var reader = new FileReader();
 
     reader.onload = function (event) {
-      var image = new Image();
-      image.src = event.target.result;
-      image.width = 200;
-      SoftUpload.step2.appendChild(image);
+      var node = document.createElement("li");
+      var div = document.createElement("div");
+      var filename = document.createTextNode("Arquivo Fonte do site.zip");
+      div.className = "progress";
+      div.appendChild(filename);
+      node.appendChild(div);
+      document.getElementById("files-list").append(node);
     };
 
     reader.readAsDataURL(file);
+
+
   }
 
 }
