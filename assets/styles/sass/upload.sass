@@ -5,7 +5,7 @@ body
   height: 100%
 
   #upload
-    width: 600px
+    width: 50%
     box-sizing: border-box
     margin: 50px auto
     padding: 20px
@@ -15,8 +15,18 @@ body
     border: 2px dashed #ddd
     border-radius: 5px
 
-    &.hover
-      background-color: yellow
+    .step1
+      height: 100%
+      p
+        margin-top: 5px
+        color: #CED4DA
+        a
+          color: #CED4DA
+
+      input
+        display: none
+        width: 1px
+        height: 1px
 
     .step2
       position: relative
@@ -34,7 +44,6 @@ body
             border-radius: 20px
 
           .progress
-            // text-shadow: 1px 1px 1px #000
             position: relative
             background-color: white
             .bg
@@ -90,3 +99,74 @@ body
 
 .text-center
   text-align: center
+
+.icons
+  text-align: center
+  img
+    width: 80px
+    transition: 1s ease all
+    &#img
+      height: 100px
+      z-index: 9999
+      position: relative
+      background-color: #f8f8f8
+      top: 10px
+
+    &#doc
+      height: 60px
+      position: relative
+      margin-right: -20px
+      transform: rotate(-30deg)
+      top: 0
+      left: 0
+
+    &#pdf
+      height: 45px
+      position: relative
+      margin-left: -20px
+      transform: rotate(30deg)
+      top: 0
+      right: 0
+
+#upload.hover
+  .icons
+    img
+      transition: 1s ease all
+      &#doc
+        transform: rotate(-45deg)
+        top: -50px
+        left: -20px
+      &#img
+        top: -40px
+      &#pdf
+        transform: rotate(45deg)
+        top: -50px
+        right: -20px
+
+  .icon-file
+    background: url("../../../assets/images/up.svg") no-repeat center center
+
+.icon-file
+  margin-top: 10px
+  background: url("../../../assets/images/cross.svg") no-repeat center center
+  height: 30px
+
+.vcenter
+  display: flex
+  justify-content: center
+  flex-direction: column
+  text-align: center
+  height: 100%
+
+
+.cancel
+  color: #868E96
+  text-decoration: none
+  font-size: 12px
+
+@media (max-width:1080px)
+  #upload
+    width: 50% !important
+@media (max-width:865px)
+  #upload
+    width: 90% !important

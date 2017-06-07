@@ -13,13 +13,28 @@
   <body>
 
     <div id="upload">
-      <div class="step1"></div>
+      <div class="step1">
+        <div class="vcenter">
+          <div class="icons">
+            <img id="doc" src="assets/images/doc.svg" />
+            <img id="img" src="assets/images/img.svg" />
+            <img id="pdf" src="assets/images/play.svg" />
+          </div>
+          <div class="icon-file"></div>
+          <p>Drag and Drop to attach or <a href="#">browse</a>.</p>
+          <input type="file" id="upload-field" name="upload-field" multiple />
+        </div>
+      </div>
+
       <div class="step2 hidden">
         <div class="title">Uploading</div>
         <a href="#" class="close-import">x</a>
 
         <ul id="files-list"></ul>
-        <div class="text-center"><a href="#" class="more-files">Importar +</a></div>
+        <div class="text-center">
+          <a href="#" class="more-files">Importar +</a>
+          <a href="#" class="cancel">Cancelar</a>
+        </div>
       </div>
     </div>
 
